@@ -40,4 +40,6 @@
     - description
     - write_time
     - finish_time
-
+    
+    superuser 아이디 : od3g
+    superuser 패스워드 : oneday3ggang
