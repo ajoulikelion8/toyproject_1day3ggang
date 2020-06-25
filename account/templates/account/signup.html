@@ -1,45 +1,58 @@
 <div class="form">
       
   <ul class="tab-group">
-    <li class="tab active"><a href="#signup">Sign Up</a></li>
+    <li class="tab"><a href="#login">Log In</a></li>
   </ul>
   
   <div class="tab-content">
     <div id="signup">   
-      <h1>Sign Up</h1>
+      <h1>Join Todolist!</h1>
       
-      <form action="/" method="post">
-      
+      <form method="post" action= "{%url 'signup'%}">
+        {% csrf_token %}
       <div class="input-field">
         <div class="field-wrap">
           <label>
-            Username를 입력해주세요.<span class="req">*</span>
+            Username를 입력해주세요.<span class="req"></span>
           </label>
-          <input type="text" required autocomplete="off" />
+          <br>
+          <input name="username" type="text" required autocomplete="off" />
+          <br>
+          <br>
         </div>
 
         <div class="field-wrap">
           <label>
-            Email를 입력해주세요.<span class="req">*</span>
+            ID를 만들어 주세요.<span class="req"></span>
           </label>
-          <input type="text" required autocomplete="off" />
+          <br>
+          <input name="id" type="text" required autocomplete="off" />
+          <br>
+          <br>
         </div>
 
       <div class="field-wrap">
         <label>
-          ID를 만들어 주세요.<span class="req">*</span>
+          Password를 입력해주세요.<span class="req"></span>
         </label>
-        <input type="id"required autocomplete="off"/>
+        <br>
+        <input name="password1" type="password"required autocomplete="off"/>
+        <br>
+        <br>
       </div>
       
       <div class="field-wrap">
         <label>
-          Password를 만들어 주세요.<span class="req">*</span>
+          Password를 한번 더 입력해주세요.<span class="req"></span>
         </label>
-        <input type="password"required autocomplete="off"/>
+        <br>
+        <input name="password2" type="password"required autocomplete="off"/>
+        <br>
+        <br>
       </div>
     </div>
-      
+      <br>
+      <br>
       <button type="submit" class="button button-block"/>Get Started</button>
       
       </form>

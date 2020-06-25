@@ -1,26 +1,31 @@
 <div class="form">
       
   <ul class="tab-group">
-    <li class="tab"><a href="#login">Log In</a></li>
+    <li class="tab active"><a href="#signup">Sign Up</a></li>
   </ul>
 
   <div class="tab-content">
     <div id="login">   
-      <h1>Welcome Come!</h1>
+      <h1>Welcome Todolist!</h1>
       
-      <form action="/" method="post">
+      <form method="post" action="{%url 'login'%}">
+        {% csrf_token %}
       
         <div class="field-wrap">
+        <br>
         <label>
-          사용자 ID를 입력해주세요.<span class="req">*</span>
+          사용자 ID를 입력해주세요.<span class="req"></span>
         </label>
+        <br>
         <input type="id"required autocomplete="off"/>
       </div>
       
       <div class="field-wrap">
+        <br>
         <label>
-          Password를 입력해주세요.<span class="req">*</span>
+          Password를 입력해주세요.<span class="req"></span>
         </label>
+        <br>
         <input type="password"required autocomplete="off"/>
       </div>
       
