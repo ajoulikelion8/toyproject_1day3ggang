@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from django.contrib import auth
 
@@ -25,7 +25,7 @@ def signup(request):
                 username=request.post["username"],id=request.post["id"],password=request.post["password1"])
             auth.login(request,user)
             return redirect('mainpage')
-        return render(request,'account/signup.html')
-    
     return render(request,'account/signup.html')
+    
+    
 
