@@ -42,9 +42,9 @@
     - write_time
     - finish_time
     
-    superuser 아이디 : od3g
+    superuser 아이디 : user1
     <p></p>
-    superuser 패스워드 : oneday3ggang    
+    superuser 패스워드 : user1234    
     
     
     
@@ -55,4 +55,14 @@
 |기능|내용|진행 상황|
 |------|---|:---:|
 |로그인|아이디, 패스워드 입력 시 로그인 됨|진행중|
-|회원가입|유저 이름, 이메일, 아이디, 패스워드 입력 시 회원가입 완료|진행중|
+|회원가입|유저 이름, 이메일, 아이디, 패스워드 입력 시 회원가입 완료|진행중|   
+
+<br/>
+<br/>
+<hr/>   
+
+## 라이브러리    
+```plain    
+pip install django    
+pip install pillow -> 이미지 라이브러리     
+```   
