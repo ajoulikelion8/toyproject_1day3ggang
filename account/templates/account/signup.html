@@ -1,3 +1,5 @@
+{% load static %}
+{% block content %}
 <div class="form">
       
   <ul class="tab-group">
@@ -10,6 +12,7 @@
       
       <form method="post" action= "{%url 'signup'%}">
         {% csrf_token %}
+        {{ form.as_p }}
       <div class="input-field">
         <div class="field-wrap">
           <label>
@@ -62,3 +65,4 @@
   </div><!-- tab-content -->
   
 </div> <!-- /form -->
+{% endblock content %}
