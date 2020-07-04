@@ -15,7 +15,9 @@
 
 - login.html
 
-- sign up.html
+- sign up.html   
+- logout.html   
+
 - 모델
   - User 
     - user_id(pk)
