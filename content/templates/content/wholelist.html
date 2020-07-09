@@ -1,0 +1,15 @@
+{% extends 'content/base.html' %}
+{% load static %}
+{% block content %}
+<h1> 게시물 리스트가 쌓이는 공간임</h1>
+{% for list in lists.all %}
+    <div class="container">
+        <h1>{{list.title}}</h1>
+        <p>{{list.image}}</p>
+        <p>{{list.description}}</p>
+        <p>{{list.write_time}}</p>
+        <p>{{list.finish_time}}</p>
+    </div>
+{% endfor %}
+
+{% endblock %}

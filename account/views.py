@@ -26,6 +26,9 @@ def signup(request):
             auth.login(request,user)
             return redirect('mainpage')
     return render(request,'account/signup.html')
+
+def logout(request):
+    return render(request,'account/logout.html')
     
     
 
