@@ -6,7 +6,7 @@
     <div class="container">
         <h1>{{list.title}}</h1>
         <p>{{list.image}}</p>
-        <p>{{list.description}}</p>
+        <p>{{list.summary}}<a href="{% url 'detail' list.id %}">자세히 보기</a></p>
         <p>{{list.write_time}}</p>
         <p>{{list.finish_time}}</p>
     </div>

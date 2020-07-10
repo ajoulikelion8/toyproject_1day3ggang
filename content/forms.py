@@ -4,12 +4,9 @@ from .models import Todolist
 class PostForm(forms.ModelForm):
     class Meta:
         model = Todolist
+        fields = ['user_id','title','image','description','write_time','finish_time']
+   
+class UpdateForm(forms.ModelForm):
+    class Meta:
+        model = Todolist
         fields = ['title','image','description','write_time','finish_time']
-    # Model Form 클래스에 구현되어있는 .save 메소드
-    # def save(self, commit=True):
-	# 	self.instance = Post(**self.cleaned_data)
-	# 	if commit:
-	# 		self.instance.save()
-	# 	return self.instance
-
-    

@@ -12,12 +12,15 @@ def min_length_1_validator(value):
 class Todolist(models.Model):
     user_id = models.ForeignKey('account.User',on_delete=models.CASCADE, blank=True, null=True)
     title = models.CharField(max_length = 100, validators=[min_length_1_validator])
-    image = models.ImageField()
+    image = models.ImageField(blank=True,null=True)
     description = models.TextField(validators=[min_length_1_validator])
     write_time = models.DateField(default=timezone.now)
-    finish_time = models.DateTimeField()
+    finish_time = models.DateTimeField(blank=True, null=True)
 
     objects = models.Manager()
 
     def __str__(self):
         return str(self.title)
+
+    def summary(self):
+        return self.description[:100]
