@@ -37,7 +37,7 @@ def update(request,list_id):
             return redirect('wholelist')
         
     else:
-        form = PostForm()
+        form = UpdateForm()
         return render(request,'content/update.html',{'form':form,'obj':obj})
 
 
