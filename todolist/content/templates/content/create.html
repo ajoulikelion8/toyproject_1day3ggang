@@ -1,0 +1,18 @@
+{% extends 'content/base.html' %}
+{% load static %}
+{% block content %}
+<h1> 게시물을 받을 공간임</h1>
+<div class = "container">
+    <form action="{% url 'create' %}", method="POST">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <div class = "submit">
+            <!-- <button type = "submit" name="submit">리스트 추가</button> -->
+            <input type="submit" value="Submit">
+        </div>
+
+    </form>
+</div>
+{% endblock %}
