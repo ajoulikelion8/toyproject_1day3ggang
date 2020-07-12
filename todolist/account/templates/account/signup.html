@@ -1,68 +1,66 @@
 {% load static %}
 {% block content %}
 <div class="form">
-      
+
   <ul class="tab-group">
     <li class="tab"><a href="#login">Log In</a></li>
   </ul>
-  
+
   <div class="tab-content">
-    <div id="signup">   
+    <div id="signup">
       <h1>Join Todolist!</h1>
-      
-      <form method="post" action= "{%url 'signup'%}">
+
+      <form method='POST' action="{%url 'signupcheck'%}">
         {% csrf_token %}
-        {{ form.as_p }}
-      <div class="input-field">
-        <div class="field-wrap">
-          <label>
-            Username를 입력해주세요.<span class="req"></span>
-          </label>
-          <br>
-          <input name="username" type="text" required autocomplete="off" />
-          <br>
-          <br>
-        </div>
+        <div class="input">
+          <div class="myusername">
+            <label>
+              Username를 입력해주세요.
+            </label>
+            <br>
+            <input name="username" type="text" required autocomplete="off" />
+            <br>
+            <br>
+          </div>
 
-        <div class="field-wrap">
-          <label>
-            ID를 만들어 주세요.<span class="req"></span>
-          </label>
-          <br>
-          <input name="id" type="text" required autocomplete="off" />
-          <br>
-          <br>
-        </div>
+          <div class="myid">
+            <label>
+              ID를 만들어 주세요.
+            </label>
+            <br>
+            <input name="id" type="text" required autocomplete="off" />
+            <br>
+            <br>
+          </div>
 
-      <div class="field-wrap">
-        <label>
-          Password를 입력해주세요.<span class="req"></span>
-        </label>
+          <div class="pw">
+            <label>
+              Password를 입력해주세요.
+            </label>
+            <br>
+            <input name="password1" type="password" required autocomplete="off" />
+            <br>
+            <br>
+          </div>
+
+          <div class="pw">
+            <label>
+              Password를 한번 더 입력해주세요.
+            </label>
+            <br>
+            <input name="password2" type="password" required autocomplete="off" />
+            <br>
+            <br>
+          </div>
+        </div>
         <br>
-        <input name="password1" type="password"required autocomplete="off"/>
         <br>
-        <br>
-      </div>
-      
-      <div class="field-wrap">
-        <label>
-          Password를 한번 더 입력해주세요.<span class="req"></span>
-        </label>
-        <br>
-        <input name="password2" type="password"required autocomplete="off"/>
-        <br>
-        <br>
-      </div>
-    </div>
-      <br>
-      <br>
-      <button type="submit" class="button button-block"/>Get Started</button>
-      
+        <input type="submit" value="회원가입">
       </form>
 
     </div>
-    
+
   </div><!-- tab-content -->
-  
+
 </div> <!-- /form -->
 {% endblock content %}
