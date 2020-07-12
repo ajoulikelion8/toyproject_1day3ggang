@@ -3,6 +3,7 @@ from django.contrib import auth
 from django.http import HttpResponse
 from django.contrib.auth import authenticate
 from account.models import MyUser
+from django.contrib.auth.hashers import check_password
 
 # Create your views here.
 
@@ -15,18 +16,18 @@ def logincheck(request):
     if request.method == 'POST':
         print("request"+str(request))
         print("body"+str(request.body))
-        username = request.POST.get('userid', '')
+        userid = request.POST.get('userid', '')
         userpassword = request.POST.get('userpw', '')
-        print("userid="+username+"userpw="+userpassword)
-        login_result = authenticate(username=username)
-
-        print("result"+str(login_result))
-        if login_result:
-            return HttpResponse(status=200)
+        if not (userid and userpassword):
+            print("아이디와 비밀번호를 모두 입력하세요.")
         else:
-            return render(request, 'account/login.html', status=401)
-
-    return HttpResponse(status=200)
+            myuser = MyUser.objects.get(user_id=userid)
+            if (userpassword == myuser.password):
+                request.session['user'] = myuser.user_id
+                return redirect('mainpage')
+            else:
+                print("비밀번호가 맞지않습니다.")
+                return redirect('login')
 
 
 def signup(request):
