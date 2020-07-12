@@ -1,8 +1,11 @@
 {% extends 'content/base.html' %}
 {% load static %}
 {% block content %}
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'content/mainpage.css' %}">
+</head>
 <section class="jumbotron text-center">
-    <div class="container">
+    <div class="containerbox">
       <h1 class="jumbotron-heading">To Do List</h1>
       <p class="lead text-muted"><strong>LikeLion 8th</strong><br>made by 규리, 유림, 주연, 재환</p>
       <p>
@@ -13,7 +16,8 @@
   </section>
 
 <div class="album py-5 bg-light">
-    <div class="container">
+    <div class="containerbox">
+
  <link rel="stylesheet" href="{% static 'content/css/timeline.css' %}">
 
     <div style="background-color: #474e5d;">
@@ -37,6 +41,7 @@
           </div>
         </div>
       </div>
+    </div>
     </div>
 
       {% endblock %}

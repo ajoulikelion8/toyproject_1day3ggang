@@ -10,6 +10,10 @@
   
   /* Style the label to display next to the inputs */
 
+  h1{
+    background-color: red;
+    color: red !important; 
+  }
 
   label {
     padding: 12px 12px 12px 0;
