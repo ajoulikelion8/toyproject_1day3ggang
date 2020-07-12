@@ -17,8 +17,10 @@
               <p class="card-text">{{list.summary}}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  <a type="button" class="btn btn-sm btn-outline-secondary" href="{% url 'detail' list.id %}">자세히</a>
+                  <a type="button" class="btn btn-sm btn-outline-secondary" href="{% url 'update' list.id %}">수정하기</a>
+                  <a type="button" class="btn btn-sm btn-outline-secondary" href="{% url 'delete' list.id %}">삭제하기</a>
+
                 </div>
                 <small class="text-muted"><strong>{{list.write_time}}</strong></small>
               </div>

@@ -1,16 +1,17 @@
 {% extends 'content/base.html' %}
 {% load static %}
 {% block content %}
+
 <h1> 게시물 리스트 자세히 볼 수 있는 공간임</h1>
     <div class="container">
         <h1>{{list.title}}</h1>
-        <p>{{list.image}}</p>
+        <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style="height: 50%; width: 70%; display: block;" src="{{ list.image.url }}" data-holder-rendered="true">
         <p>{{list.description}}</p>
         <p>{{list.write_time}}</p>
         <p>{{list.finish_time}}</p>
-        <a href="{% url 'wholelist' %}">전체 리스트 보기</a>
-        <a href="{% url 'delete' list.id %}">삭제하기</a>
-        <a href="{% url 'update' list.id %}">수정하기</a>
+        <a type="button" class="btn btn-sm btn-outline-secondary" href="{% url 'wholelist' %}">전체 리스트 보기</a>
+        <a type="button" class="btn btn-sm btn-outline-secondary" href="{% url 'delete' list.id %}">삭제하기</a>
+        <a type="button" class="btn btn-sm btn-outline-secondary" href="{% url 'update' list.id %}">수정하기</a>
     </div>
 
 
