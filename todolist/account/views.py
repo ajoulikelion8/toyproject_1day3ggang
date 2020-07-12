@@ -53,4 +53,5 @@ def signupcheck(request):
 
 
 def logout(request):
-    return render(request, 'account/logout.html')
+    request.session.pop('user')
+    return redirect('mainpage')
