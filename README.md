@@ -14,15 +14,13 @@
 앱 1 :  account
 
 - login.html
-
 - sign up.html   
-- logout.html   
+
 
 - 모델
-  - User 
+  - MyUser 
     - user_id(pk)
     - user_name
-    - email
     - password
 
 앱 2 :  content
