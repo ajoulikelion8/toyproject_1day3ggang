@@ -1,6 +1,7 @@
 {% extends 'content/base.html' %}
 {% load static %}
 {% block content %}
+<link rel="stylesheet" href="{% static 'content/css/create.css' %}">
 <h1> 게시물을 받을 공간임</h1>
 <div class = "container">
     <form action="{% url 'create' %}", method="POST">
